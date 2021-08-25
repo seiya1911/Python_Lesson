@@ -16,7 +16,7 @@ def square_root(x):
     return rnew
 
 
-v = input()
+v = input('正の数値を入力してください ')
 v = float(v)
 r = square_root(v)
 print('結果は ', r)
