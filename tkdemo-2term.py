@@ -90,22 +90,35 @@ def show_number(num):
 
 
 root = tk.Tk()
-f = tk.Frame(root)
+f = tk.Frame(root, bg='#ffffc0')
 f.grid()
 
-b1 = tk.Button(f, text='1', command=lambda: key(1))
-b2 = tk.Button(f, text='2', command=lambda: key(2))
-b3 = tk.Button(f, text='3', command=lambda: key(3))
-b4 = tk.Button(f, text='4', command=lambda: key(4))
-b5 = tk.Button(f, text='5', command=lambda: key(5))
-b6 = tk.Button(f, text='6', command=lambda: key(6))
-b7 = tk.Button(f, text='7', command=lambda: key(7))
-b8 = tk.Button(f, text='8', command=lambda: key(8))
-b9 = tk.Button(f, text='9', command=lambda: key(9))
-b0 = tk.Button(f, text='0', command=lambda: key(0))
-bc = tk.Button(f, text='C', command=clear)
-bp = tk.Button(f, text='+', command=plus)
-be = tk.Button(f, text='=', command=eq)
+b1 = tk.Button(f, text='1', command=lambda: key(1),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b2 = tk.Button(f, text='2', command=lambda: key(2),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b3 = tk.Button(f, text='3', command=lambda: key(3),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b4 = tk.Button(f, text='4', command=lambda: key(4),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b5 = tk.Button(f, text='5', command=lambda: key(5),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b6 = tk.Button(f, text='6', command=lambda: key(6),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b7 = tk.Button(f, text='7', command=lambda: key(7),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b8 = tk.Button(f, text='8', command=lambda: key(8),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b9 = tk.Button(f, text='9', command=lambda: key(9),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+b0 = tk.Button(f, text='0', command=lambda: key(0),
+               highlightbackground='#ffffff', width=2, font=('Helvetica', 14))
+bc = tk.Button(f, text='C', command=clear,
+               highlightbackground='#ff0000', width=2, font=('Helvetica', 14))
+bp = tk.Button(f, text='+', command=plus,
+               highlightbackground='#00ff00', width=2, font=('Helvetica', 14))
+be = tk.Button(f, text='=', command=eq,
+               highlightbackground='#00ff00', width=2, font=('Helvetica', 14))
 
 b1.grid(row=3, column=0)
 b2.grid(row=3, column=1)
