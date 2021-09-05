@@ -48,3 +48,60 @@ def test_turn():
     print(show_turn(), 'の番です')
     change_turn()
     print(show_turn(), 'の番です')
+
+
+def show_board():
+    '盤面を表す文字列を返す'
+    s = ' :0 1 2\n---------\n'
+    for i in range(3):
+        s = s + str(i) + ':'
+        for j in range(3):
+            cell = ''
+            if board[i][j] == OPEN:
+                cell = ' '
+            elif board[i][j] == FIRST:
+                cell = '0'
+            elif board[i][j] == SECOND:
+                cell = 'X'
+            else:
+                cell = '?'
+            s = s + cell + ' '
+        s = s + '\n'
+    return s
+
+
+def init_board():
+    '盤面すべて空（OPEN）に初期化する'
+    for i in range(3):
+        for j in range(3):
+            board[i][j] = OPEN
+
+
+def examine_board(i, j):
+    '盤面の i , j の位置の値を返す'
+    return board[i][j]
+
+
+def set_board(i, j, t):
+    if (i >= 0) and (i < 3) and (j >= 0) and (j < 3):
+        if (t > 0) and (t < 3):
+            if examine_board(i, j) == 0:
+                board[i][j] = t
+                return 'OK'
+            else:
+                return 'Not empty'
+        else:
+            return 'illegal turn'
+    else:
+        return 'illegal slot'
+
+
+def test_board1():
+    init_board()
+    print(show_board())
+    print(set_board(0, 0, 1))
+    print(show_board())
+    print(set_board(1, 1, 2))
+    print(show_board())
+    print(set_board(1, 1, 1))
+    print(show_board())
