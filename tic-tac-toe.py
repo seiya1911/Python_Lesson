@@ -105,3 +105,71 @@ def test_board1():
     print(show_board())
     print(set_board(1, 1, 1))
     print(show_board())
+
+
+def check_board_horizonal(t):
+    for i in range(3):
+        if (board[i][0] == t) and (board[i][1] == t) and (board[i][2] == t):
+            return True
+    return False
+
+
+def check_board_vertical(t):
+    for j in range(3):
+        if (board[0][j] == t) and (board[1][j] == t) and (board[2][j] == t):
+            return True
+    return False
+
+
+def check_board_diagonal(t):
+    if (board[0][2] == t) and (board[1][1] == t) and (board[2][0] == t):
+        return True
+    return False
+
+
+def check_board_inverse_diagonal(t):
+    if (board[0][2] == t) and (board[1][1] == t) and (board[2][0] == t):
+        return True
+    return False
+
+
+def is_win_simple(t):
+    if check_board_horizonal(t):
+        return True
+    if check_board_vertical(t):
+        return True
+    if check_board_diagonal(t):
+        return True
+    if check_board_inverse_diagonal(t):
+        return True
+    return False
+
+
+def is_win_actual(t):
+    if not is_win_simple(t):
+        return False
+    if t == FIRST:
+        if is_win_simple(SECOND):
+            return False
+    else:
+        if is_win_simple(FIRST):
+            return False
+    return True
+
+
+def is_full():
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == OPEN:
+                return False
+    return True
+
+
+def is_even():
+    if is_win_simple(FIRST):
+        return False
+    if is_win_simple(SECOND):
+        return False
+    if not is_full():
+        return False
+    return True
