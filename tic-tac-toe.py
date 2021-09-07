@@ -107,7 +107,7 @@ def test_board1():
     print(show_board())
 
 
-def check_board_horizonal(t):
+def check_board_horizontal(t):
     for i in range(3):
         if (board[i][0] == t) and (board[i][1] == t) and (board[i][2] == t):
             return True
@@ -173,3 +173,79 @@ def is_even():
     if not is_full():
         return False
     return True
+
+
+def test_board2():
+    init_board()
+    board[0][0] = FIRST
+    board[1][0] = FIRST
+    board[2][0] = FIRST
+    print(show_board())
+    print('HORIZONTAL FIRST: ', check_board_horizontal(FIRST))
+    print('HORIZONTAL SECOND: ', check_board_horizontal(SECOND))
+    print('VERTICAL FIRST: ', check_board_vertical(FIRST))
+    print('VERTICAL SECOND: ', check_board_vertical(SECOND))
+    init_board()
+    board[0][0] = SECOND
+    board[1][0] = SECOND
+    board[2][0] = SECOND
+    print(show_board())
+    print('HORIZONTAL FIRST: ', check_board_horizontal(FIRST))
+    print('HORIZONTAL SECOND: ', check_board_horizontal(SECOND))
+    print('VERTICAL FIRST: ', check_board_vertical(FIRST))
+    print('VERTICAL SECOND: ', check_board_vertical(SECOND))
+    init_board()
+    board[0][0] = FIRST
+    board[0][1] = FIRST
+    board[0][2] = FIRST
+    print(show_board())
+    print('HORIZONTAL FIRST: ', check_board_horizontal(FIRST))
+    print('HORIZONTAL SECOND: ', check_board_horizontal(SECOND))
+    print('VERTICAL FIRST: ', check_board_vertical(FIRST))
+    print('VERTICAL SECOND: ', check_board_vertical(SECOND))
+    init_board()
+    board[0][0] = SECOND
+    board[0][1] = SECOND
+    board[0][2] = SECOND
+    print(show_board())
+    print('HORIZONTAL FIRST: ', check_board_horizontal(FIRST))
+    print('HORIZONTAL SECOND: ', check_board_horizontal(SECOND))
+    print('VERTICAL FIRST: ', check_board_vertical(FIRST))
+    print('VERTICAL SECOND: ', check_board_vertical(SECOND))
+    init_board()
+    board[0][0] = FIRST
+    board[1][1] = FIRST
+    board[2][2] = FIRST
+    print(show_board())
+    print('DIAGONAL FIRST: ', check_board_diagonal(FIRST))
+    print('DIAGONAL SECOND: ', check_board_diagonal(SECOND))
+    print('INV DIAGONAL FIRST: ', check_board_inverse_diagonal(FIRST))
+    print('INV DIAGONAL SECOND: ', check_board_inverse_diagonal(SECOND))
+    init_board()
+    board[0][0] = SECOND
+    board[1][1] = SECOND
+    board[2][2] = SECOND
+    print(show_board())
+    print('DIAGONAL FIRST: ', check_board_diagonal(FIRST))
+    print('DIAGONAL SECOND: ', check_board_diagonal(SECOND))
+    print('INV DIAGONAL FIRST: ', check_board_inverse_diagonal(FIRST))
+    print('INV DIAGONAL SECOND: ', check_board_inverse_diagonal(SECOND))
+    init_board()
+    board[0][2] = FIRST
+    board[1][1] = FIRST
+    board[2][0] = FIRST
+    print(show_board())
+    print('DIAGONAL FIRST: ', check_board_diagonal(FIRST))
+    print('DIAGONAL SECOND: ', check_board_diagonal(SECOND))
+    print('INV DIAGONAL FIRST: ', check_board_inverse_diagonal(FIRST))
+    print('INV DIAGONAL SECOND: ', check_board_inverse_diagonal(SECOND))
+    init_board()
+    board[0][2] = SECOND
+    board[1][1] = SECOND
+    board[2][0] = SECOND
+    print(show_board())
+    print('DIAGONAL FIRST: ', check_board_diagonal(FIRST))
+    print('DIAGONAL SECOND: ', check_board_diagonal(SECOND))
+    print('INV DIAGONAL FIRST: ', check_board_inverse_diagonal(FIRST))
+    print('INV DIAGONAL SECOND: ', check_board_inverse_diagonal(SECOND))
+
