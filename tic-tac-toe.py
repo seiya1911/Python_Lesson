@@ -249,3 +249,40 @@ def test_board2():
     print('INV DIAGONAL FIRST: ', check_board_inverse_diagonal(FIRST))
     print('INV DIAGONAL SECOND: ', check_board_inverse_diagonal(SECOND))
 
+
+def test_board3():
+
+
+def replay_log(log):
+    init_board()
+    init_turn()
+    print(show_board())
+    for m in log:
+        if len(m) == 2:
+            print(show_turn(), 'の番です')
+            print(set_board(m[0], m[1], turn))
+            print(show_board())
+            print('IS WIN', turn, ':', is_win_actual(turn))
+            change_turn()
+        else:
+            print('RESULT IN LOG: ', m[0])
+        print('IS WIN FIRST: ', is_win_actual(FIRST))
+        print('IS WIN SECOND: ', is_win_actual(SECOND))
+        print('IS EVEN: ', is_even())
+
+
+def test_log():
+    print('LOG1')
+    replay_log(log1)
+    print('LOG2')
+    replay_log(log2)
+    print('LOG3')
+    replay_log(log3)
+
+
+def test_all():
+    test_turn()
+    test_board1()
+    test_board2()
+    test_board3()
+    test_log()
