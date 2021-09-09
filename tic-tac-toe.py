@@ -251,6 +251,9 @@ def test_board2():
 
 
 def test_board3():
+  init_board()
+  board[0][0] = FIRST
+  
 
 
 def replay_log(log):
