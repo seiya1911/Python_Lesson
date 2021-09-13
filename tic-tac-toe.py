@@ -134,7 +134,7 @@ def check_board_inverse_diagonal(t):
 
 
 def is_win_simple(t):
-    if check_board_horizonal(t):
+    if check_board_horizontal(t):
         return True
     if check_board_vertical(t):
         return True
@@ -251,9 +251,81 @@ def test_board2():
 
 
 def test_board3():
-  init_board()
-  board[0][0] = FIRST
-  
+    init_board()
+    board[0][0] = FIRST
+    board[1][0] = FIRST
+    board[2][0] = SECOND
+    board[0][1] = SECOND
+    board[1][1] = SECOND
+    board[2][1] = FIRST
+    board[0][2] = FIRST
+    board[1][2] = FIRST
+    board[2][2] = SECOND
+    print(show_board())
+    print("HORIZONTAL FIRST: ", check_board_horizontal(FIRST))
+    print("HORIZONTAL SECOND: ", check_board_horizontal(SECOND))
+    print("VERTICAL FIRST: ", check_board_vertical(FIRST))
+    print("VERTICAL SECOND: ", check_board_vertical(SECOND))
+    print("DIAGONAL FIRST: ", check_board_diagonal(FIRST))
+    print("DIAGONAL SECOND: ", check_board_diagonal(SECOND))
+    print("INV DIAGONAL FIRST: ", check_board_inverse_diagonal(FIRST))
+    print("INV DIAGONAL SECOND: ", check_board_inverse_diagonal(SECOND))
+    print("IS WIN SIMPLE FIRST", is_win_simple(FIRST))
+    print("IS WIN SIMPLE SECOND", is_win_simple(SECOND))
+    print("IS WIN ACTUAL FIRST", is_win_actual(FIRST))
+    print("IS WIN ACTUAL SECOND", is_win_actual(SECOND))
+    print("IS FULL", is_full())
+    print("IS EVEN", is_even())
+    init_board()
+    board[0][0] = FIRST
+    board[1][0] = SECOND
+    board[2][0] = FIRST
+    board[0][1] = SECOND
+    board[1][1] = FIRST
+    board[2][1] = OPEN
+    board[0][2] = FIRST
+    board[1][2] = OPEN
+    board[2][2] = SECOND
+    print(show_board())
+    print("HORIZONTAL FIRST: ", check_board_horizontal(FIRST))
+    print("HORIZONTAL SECOND: ", check_board_horizontal(SECOND))
+    print("VERTICAL FIRST: ", check_board_vertical(FIRST))
+    print("VERTICAL SECOND: ", check_board_vertical(SECOND))
+    print("DIAGONAL FIRST: ", check_board_diagonal(FIRST))
+    print("DIAGONAL SECOND: ", check_board_diagonal(SECOND))
+    print("INV DIAGONAL FIRST: ", check_board_inverse_diagonal(FIRST))
+    print("INV DIAGONAL SECOND: ", check_board_inverse_diagonal(SECOND))
+    print("IS WIN SIMPLE FIRST", is_win_simple(FIRST))
+    print("IS WIN SIMPLE SECOND", is_win_simple(SECOND))
+    print("IS WIN ACTUAL FIRST", is_win_actual(FIRST))
+    print("IS WIN ACTUAL SECOND", is_win_actual(SECOND))
+    print("IS FULL", is_full())
+    print("IS EVEN", is_even())
+    init_board()
+    board[0][0] = SECOND
+    board[1][0] = FIRST
+    board[2][0] = SECOND
+    board[0][1] = FIRST
+    board[1][1] = SECOND
+    board[2][1] = FIRST
+    board[0][2] = SECOND
+    board[1][2] = OPEN
+    board[2][2] = FIRST
+    print(show_board())
+    print("HORIZONTAL FIRST: ", check_board_horizontal(FIRST))
+    print("HORIZONTAL SECOND: ", check_board_horizontal(SECOND))
+    print("VERTICAL FIRST: ", check_board_vertical(FIRST))
+    print("VERTICAL SECOND: ", check_board_vertical(SECOND))
+    print("DIAGONAL FIRST: ", check_board_diagonal(FIRST))
+    print("DIAGONAL SECOND: ", check_board_diagonal(SECOND))
+    print("INV DIAGONAL FIRST: ", check_board_inverse_diagonal(FIRST))
+    print("INV DIAGONAL SECOND: ", check_board_inverse_diagonal(SECOND))
+    print("IS WIN SIMPLE FIRST", is_win_simple(FIRST))
+    print("IS WIN SIMPLE SECOND", is_win_simple(SECOND))
+    print("IS WIN ACTUAL FIRST", is_win_actual(FIRST))
+    print("IS WIN ACTUAL SECOND", is_win_actual(SECOND))
+    print("IS FULL", is_full())
+    print("IS EVEN", is_even())
 
 
 def replay_log(log):
