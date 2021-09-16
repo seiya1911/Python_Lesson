@@ -361,3 +361,38 @@ def test_all():
     test_board2()
     test_board3()
     test_log()
+
+
+def play():
+    init_turn()
+    init_board()
+    print(show_board())
+    global log
+    log = []
+    while True:
+        print(show_turn(), 'の番です')
+        while(True):
+            row = int(input('行を入力してください'))
+            column = int(input('列を入力してください'))
+            result = set_board(row, column, turn)
+            print(result)
+            if (result == 'OK'):
+                break
+            print('不適切な入力です。再度、入力してください')
+        print(show_board())
+        if (is_even()):
+            print('引き分けです')
+            log.append([EVEN])
+            break
+        if (is_win_actual(turn)):
+            print(show_turn(), 'の勝ちです')
+            break
+        change_turn()
+    if len(log) > 0:
+        replay_log(log)
+    else:
+        print('棋譜は作成されていません')
+
+
+if __name__ == '__main__':
+    print('三目並べ')
