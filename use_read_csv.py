@@ -8,4 +8,4 @@ df = pd.read_csv('sample2.csv')
 df['Total'] = df.sum(axis = 1)
 print(df)
 
-print(df,describe())
+print(df.describe())
